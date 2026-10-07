@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "LiftingCast Higher Limit",
+  "version": "1.0",
+  "description": "Increases the CouchDB _changes limit parameter from 25 to 10000 used by LiftingCast, possibly resulting in less reconnections.",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "https://liftingcast.com/*",
+    "https://couchdb.liftingcast.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
