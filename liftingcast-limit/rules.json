@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "priority": 1000,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              {
+                "key": "limit",
+                "value": "10000"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "/_changes?",
+      "initiatorDomains": [
+        "liftingcast.com"
+      ],
+      "resourceTypes": [
+        "xmlhttprequest"
+      ]
+    }
+  }
+]
